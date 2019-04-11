@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    <title>Data Table</title>
+        <link rel="stylesheet" href="{{ url_for("static",filename="css/issue-book.css") }}">
+<head>
+  <body >
+<div class="table-title">
+  <h3 style="font-family: 'Exo', sans-serif">Issue Book</h3>
+  {% for message in get_flashed_messages() %}
+  {{ message }}
+  {% endfor %}
+  <form action="{{ url_for('book_issue_return') }}" id="issue" method="post">
+    <input type="text" placeholder="User-Name" name="username"><br><br>
+    <input type="text" placeholder="Serial-No." name="serialno"><br><br>
+    <button type="submit" form="issue" id="iss" name="Submit" value="Issue">Issue Book</button><br><br>
+    <button type="submit" form="issue" id="iss" name="Submit" value="Return">Return Book</button><br><br>
+    <a href="{{ url_for('admin') }}"><button type="button" id="iss">Cancel</button></a>
+  </form>
+
+
+
+  </body>
+  <div class="footer">
+    <div class="name">
+      <div>Copyright &copy; <span>Team ADD</span></div>
+  </div>
+
+
+
+
+
+  </body>
+</html>
